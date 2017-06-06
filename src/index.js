@@ -7,7 +7,19 @@ ReactDOM.render(
   <h1>Hi, world!</h1>,
   document.getElementById('root')
 );
+
+
+// setInterval(tick, 1000);
+
 /*function tick() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);
+function tick() {
   const element = (
     <div>
       <h1>Hello, world!</h1>
