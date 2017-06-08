@@ -8,7 +8,7 @@
 
 ### 为什么要加default ?
 
-export default命令用于为模块指定默认输出。其他模块加载该模块时，import命令可以为其指定任意名字，并且对应的import语句不需要使用大括号
+export default命令用于为模块指定默认输出。其他模块加载该模块时，import命令可以为其指定任意名字，并且对应的import语句不需要使用大括号.
 
 ### input里的文字用input.value就可以获得了，为什么还要用newTodo来容纳呢？
 
