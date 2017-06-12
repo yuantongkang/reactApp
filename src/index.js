@@ -8,7 +8,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ReactDOM.render(
-  <App/>,
+  <App/>, 
   document.querySelector('#root')
 
 )
