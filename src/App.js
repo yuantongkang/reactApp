@@ -4,6 +4,8 @@ import './App.css';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 import 'normalize.css';
+import  UserDialog from './UserDialog';
+import './UserDialog.css'
 
 
 class App extends Component {
@@ -40,6 +42,7 @@ class App extends Component {
         <ol className="todoList">
           {todos}
         </ol>
+        < UserDialog/>
       </div>
     )
   }
