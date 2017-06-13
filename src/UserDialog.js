@@ -53,7 +53,7 @@ export default class UserDialog extends Component {
           <div className="panes">
             {this.state.selected === 'signUp' ? signUpForm : null}
             {this.state.selected === 'signIn' ? signInForm : null}
-            {console.log(this.state.selected === 'signUp' ? signUpForm : null)}
+            {console.log(signInForm)}
           </div>
         </div>
       </div>
