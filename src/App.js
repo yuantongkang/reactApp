@@ -12,6 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      user: {},
       newTodo: '',
       // todoList: []
       todoList:  []
@@ -45,6 +46,10 @@ class App extends Component {
         <UserDialog onSignUp={this.onSignUp.bind(this)}/>
       </div>
     )
+  }
+  onSignUp(user){
+     this.state.user = user
+    this.setState(this.state)
   }
   componentDidUpdate() {
     
