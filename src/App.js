@@ -7,7 +7,7 @@ import 'normalize.css';
 import  UserDialog from './UserDialog';
 import './UserDialog.css'
 
-
+=IF(MID(B5,3,2)="03","三班",MID(B5,3,2)="02","2班")
 class App extends Component {
   constructor(props) {
     super(props)
