@@ -27,6 +27,7 @@ class App extends Component {
           <li key={index}>
             <TodoItem todo={item} onToggle={this.toggle.bind(this)}
               onDelete={this.delete.bind(this)} />
+              {console.log(this)}
           </li>
         )
       })
@@ -48,8 +49,9 @@ class App extends Component {
     )
   }
   onSignUp(user){
-     this.state.user = user
-    this.setState(this.state)
+    let stateCopy = JSON.parse(JSON.stringify(this.state))
+    stateCopy.user = user
+    this.setState(stateCopy)
   }
   componentDidUpdate() {
     
