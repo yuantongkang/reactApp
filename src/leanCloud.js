@@ -7,7 +7,7 @@ AV.init({
 });
 export default AV
 
-export function signUp(username, password, successFn, errorFn){
+export function signUp(email,username, password, successFn, errorFn){
     // 新建 AVUser 对象实例
    var user = new AV.User()
    // 设置用户名
@@ -21,12 +21,13 @@ export function signUp(username, password, successFn, errorFn){
    }, function (error) {
      errorFn.call(null, error)
    })
- 
+    user.setEmail(email)
    return undefined
  
  }
  
  function getUserFromAVUser(AVUser){
+   console.log(...AVUser.attributes)
    return {
      id: AVUser.id,
      ...AVUser.attributes

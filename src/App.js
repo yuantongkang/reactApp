@@ -19,7 +19,7 @@ class App extends Component {
       todoList: []
     }
   }
-  render() {
+  render(){ 
     let todos = this.state.todoList
       .filter((item) => !item.deleted)
       .map((item, index) => {
