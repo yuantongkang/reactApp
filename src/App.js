@@ -51,7 +51,9 @@ class App extends Component {
           null :
           <UserDialog
             onSignUp={this.onSignUp.bind(this)}
-            onSignIn={this.onSignIn.bind(this)} />}
+            onSignIn={this.onSignIn.bind(this)}
+             />}
+             
       </div>
     )
   }
