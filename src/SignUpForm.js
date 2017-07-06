@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-
+import { Icon } from 'antd';
+import {Button} from 'antd';
 export default class SignUpForm extends Component {
   render () {
     return (
@@ -16,12 +17,12 @@ export default class SignUpForm extends Component {
           {/* bind 不仅可以绑定 this，还可以绑定第一个参数 */}
         </div>
         <div className="row">
-          <label>密码</label>
+          <Icon type="lock" /><label>密码</label>
           <input type="password" value={this.props.formData.password}
             onChange={this.props.onChange.bind(null, 'password')}/>
         </div>
         <div className="row actions">
-          <button type="submit">注册</button>
+          <Button type="primary "  htmlType="submit">注册</Button>
         </div>
       </form>
     )

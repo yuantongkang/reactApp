@@ -6,7 +6,9 @@ import TodoItem from './TodoItem';
 import 'normalize.css';
 import UserDialog from './UserDialog';
 import './UserDialog.css';
-import { getCurrentUser, signOut } from './leanCloud'
+import { getCurrentUser, signOut } from './leanCloud';
+import Button from 'antd/lib/button';
+
 
 
 class App extends Component {
@@ -110,7 +112,9 @@ class App extends Component {
   }
 }
 
+
 export default App;
+
 let id = 0
 
 function idMaker() {
