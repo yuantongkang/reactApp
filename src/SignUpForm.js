@@ -1,23 +1,35 @@
 import React, {Component} from 'react';
-import { Icon } from 'antd';
-import {Button} from 'antd';
+import { Icon ,Button,  Input} from 'antd';
 export default class SignUpForm extends Component {
   render () {
     return (
       <form className="signUp" onSubmit={this.props.onSubmit.bind(this)}> {/* 注册*/}
+        
+         <Input
+        className = 'row'
+        placeholder="输入用户名"
+        prefix={<Icon type="user" />}
+        onChange={this.props.onChange.bind(null, 'username')}
+        ref={node => this.userNameInput = node}
+        value={this.props.formData.username}
+      />
+         <Input
+        className = 'row'
+        placeholder="输入密码"
+        prefix={<Icon type="password" />}
+        onChange={this.props.onChange.bind(null, 'password')}
+        ref={node => this.userNameInput = node}
+        value={this.props.formData.password}
+      />
+        
         <div className="row">
-          <label>邮箱</label>
+          <Icon type="mail" style={{fontSize:16}}/><label>邮箱</label>
           <input type="text" value={this.props.formData.email}
             onChange={this.props.onChange.bind(null, 'email')}/>
         </div>
+         
         <div className="row">
-          <label>用户名</label>
-          <input type="text" value={this.props.formData.username}
-            onChange={this.props.onChange.bind(null, 'username')}/>
-          {/* bind 不仅可以绑定 this，还可以绑定第一个参数 */}
-        </div>
-        <div className="row">
-          <Icon type="lock" /><label>密码</label>
+          <Icon  style={{fontSize:16}}type="lock" /><label>密码</label>
           <input type="password" value={this.props.formData.password}
             onChange={this.props.onChange.bind(null, 'password')}/>
         </div>

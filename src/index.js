@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Abb from './App';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import Welcome from './Welcome'
 ReactDOM.render(
@@ -8,7 +8,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ReactDOM.render(
-  <Abb/>, 
+  <App/>, 
   document.querySelector('#root')
 
 )
