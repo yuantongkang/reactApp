@@ -1,6 +1,7 @@
 .UserDialog-Wrapper{ 
   /*全屏*/      position: fixed; top: 0; left: 0; bottom: 0; right: 0; 
    /*内容居中*/  display: flex; justify-content: center; align-items: center;
+  
  }
  .UserDialog{
    border: 1px solid;
@@ -9,6 +10,7 @@
    background: white;
    border: 1px solid #aaa;
    box-shadow: 0 0 1em hsla(0,0%,0%,0.35);
+   
  }
  .UserDialog form>.row.actions{ padding-left: 4em; display: flex; align-items: center;}
  .UserDialog form>.row.actions button{ margin-right: .5em; }
@@ -23,6 +25,9 @@
  .UserDialog form>.row.actions{ padding-left: 4em; }
  .anticon{ display:flex;line-height: none;text-align:center;}
  .signUp  {display: flex;align-content: space-around;flex-direction: column;justify-content:center}
- .signUp > *{margin:5px;}
+ .signUp > *{margin:10px 0;}
   div.UserDialog-Wrapper > div > div > div > form > div{text-align: center;margin: 5px -13px;}
-  .signIn >  *{margin:5px; max-width: 200px;display:flex;align-content: space-around ;justify-content:center; align-items: center;}
+  .signIn >  *{ margin:10px 0; max-width: 200px;display:flex;align-content: space-around ;justify-content:center; align-items: center;}
+  .UserDialog{min-height:30em;min-width: 23em; display: flex; align-items: center;justify-content: center}
+  .ant-btn {    width: 6em}
+   form > div.row.actions{    margin: 0 40px 0 -10px}

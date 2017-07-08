@@ -22,18 +22,7 @@ export default class SignInOrSignUp extends Component {
   render() {
     return (
       <div className="signInOrSignUp">
-        <nav>
-          <label>
-            <input type="radio" value="signUp"
-              checked={this.state.selected === 'signUp'}
-              onChange={this.switch.bind(this)}
-            /> 注册</label>
-          <label>
-            <input type="radio" value="signIn"
-              checked={this.state.selected === 'signIn'}
-              onChange={this.switch.bind(this)}
-            /> 登录</label>
-        </nav>
+        
         <div className="panes">
           {this.state.selected === 'signUp' ?
             <SignUpForm formData={this.props.formData}
@@ -47,6 +36,7 @@ export default class SignInOrSignUp extends Component {
               onChange={this.props.onChange}
               onSubmit={this.props.onSignIn}
               onForgotPassword={this.props.onForgotPassword}
+              onSwitch={this.switch.bind(this)}
             />
             : null}
         </div>
