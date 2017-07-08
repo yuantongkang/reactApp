@@ -10,7 +10,6 @@ import { getCurrentUser, signOut } from './leanCloud';
 import Button from 'antd/lib/button';
 
 
-
 class App extends Component {
   constructor(props) {
     super(props)

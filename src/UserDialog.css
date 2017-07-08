@@ -5,7 +5,7 @@
  .UserDialog{
    border: 1px solid;
    border-radius: 4px;
-   min-width: 20em;
+   min-width: 40em;
    background: white;
    border: 1px solid #aaa;
    box-shadow: 0 0 1em hsla(0,0%,0%,0.35);
@@ -16,9 +16,13 @@
  .UserDialog button{font: inherit; padding: .2em;}
  .UserDialog > nav:first-child{ padding: 1em; margin-left:-2em;}
  .UserDialog > nav:first-child label{ margin-left: 2em;cursor:pointer; }
- 
+ .panes{display:flex;align-content: space-around ;justify-content:center; align-items: center;}
  .UserDialog > .panes { padding: 0 1em 1em; }
  .UserDialog form>.row{ display: flex; padding: .3em 0; }
  .UserDialog form>.row>label:first-child{ width: 4em; }
  .UserDialog form>.row.actions{ padding-left: 4em; }
- .anticon{line-height: none;text-align:center;}
+ .anticon{ display:flex;line-height: none;text-align:center;}
+ .signUp  {display: flex;align-content: space-around;flex-direction: column;justify-content:center}
+ .signUp > *{margin:5px;}
+  div.UserDialog-Wrapper > div > div > div > form > div{text-align: center;margin: 5px -13px;}
+  .signIn >  *{margin:5px; max-width: 200px;display:flex;align-content: space-around ;justify-content:center; align-items: center;}

@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
+import { Icon ,Button,  Input} from 'antd';
 
-
-export default class SignInFrom extends Component{
-  render(){
-    return <form className="signIn" onSubmit={this.props.onSubmit}> {/* 登录*/}
-      <div className="row">
-        <label>用户名</label>
-        <input type="text" value={this.props.formData.username}
-          onChange={this.props.onChange.bind(null, 'username')} />
-      </div>
-      <div className="row">
-        <label>密码</label>
-        <input type="password" value={this.props.formData.password}
-          onChange={this.props.onChange.bind(null, 'password')} />
-      </div>
+export default function SignInFrom (props){
+    return (<form className="signIn" onSubmit={props.onSubmit}> {/* 登录*/}
+      <Input
+        className = 'row'
+        placeholder="输入用户名"
+        prefix={<Icon type="user" />}
+        onChange={props.onChange.bind(null, 'username')}
+       
+        value={props.formData.username}
+      />
+         <Input
+        className = 'row'
+        placeholder="输入密码"
+        prefix= {<Icon type="lock" />}
+        onChange={props.onChange.bind(null, 'password')}
+        
+        type = 'password'
+        value={props.formData.password}
+      />
       <div className="row actions">
-        <button type="submit">登录</button>
-        <a href="#" onClick={this.props.onForgotPassword}>忘记密码了？</a>
+        <Button type="primary "  htmlType="submit">登录{console.log(props.onChange)}</Button>
+        <a href="#" onClick={props.onForgotPassword}>忘记密码了？</a>
       </div>
     </form>
-  }
-
+    )
 }
 
 
