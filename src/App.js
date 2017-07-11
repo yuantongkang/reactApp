@@ -9,6 +9,7 @@ import './UserDialog.css';
 import {getCurrentUser, signOut} from './leanCloud';
 import {Button, Radio} from 'antd';
 import CompletedItem from "./completedItem";
+import AllItem from "./AllItem"
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
@@ -24,6 +25,26 @@ class App extends Component {
     }
   }
   render() {
+    let list = null;
+    
+    let all = this
+      .state
+      .todoList
+      .map((item, index) => {
+        console.log(item, index)
+        return (
+          <li key={index}>
+            <AllItem
+              todo={item}
+              onToggle={this
+              .toggle
+              .bind(this)}
+              onDelete={this
+              .delete
+              .bind(this)}/> {console.log(this)}
+          </li>
+        )
+      })
     let todos = this
       .state
       .todoList
@@ -62,8 +83,16 @@ class App extends Component {
           </li>
         )
       })
+      if(this.state.completed == true){
+      console.log(arguments)
+      list = completedTodos
+    } else if(this.state.completed == false){
+      list =  todos
+    } else{
+      list =  all
+    }
     console.log(todos)
-
+  
     return (
       <div className="App">
         <h1>{this.state.user.username || '我'}的待办 {this.state.user.id
@@ -83,7 +112,7 @@ class App extends Component {
             .bind(this)}/>
         </div>
         <ol className="todoList">
-          {this.state.completed? completedTodos :todos }
+          { list }
         </ol>
         {this.state.user.id
           ? null
@@ -98,14 +127,16 @@ class App extends Component {
           <RadioGroup 
             onChange = {this.changeTodoState.bind(this)}
           >
-            <RadioButton value="all">ALL</RadioButton>
+            <RadioButton value="active">ACTIVE</RadioButton>
             <RadioButton value="completed">COMPLETED</RadioButton>
+             <RadioButton value="all">ALL</RadioButton>
           </RadioGroup>
 
         </div>
       </div>
     )
   }
+
   onSignUp(user) {
     let stateCopy = JSON.parse(JSON.stringify(this.state))
     stateCopy.user = user
@@ -123,12 +154,15 @@ class App extends Component {
     this.setState(stateCopy)
   }
   changeTodoState(event,todo){
-    if(event.target.value === "all"){
+    if(event.target.value === "active"){
       this.setState({completed:false})
       console.log(event.target.value)
     }else if(event.target.value === "completed"){
       console.log(event.target.value)
       this.setState({completed:true})
+    }else if(event.target.value === "all"){
+      console.log(event.target.value)
+      this.setState({completed:"all"})
     }
   }
   componentDidUpdate() {}
