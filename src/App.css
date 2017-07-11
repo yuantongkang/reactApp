@@ -13,6 +13,6 @@
 .App > .todoList> li:nth-child(odd){
    background: #eee;
  }
- .App > .todoList> li:nth-child(even){
+ .App > .todoList> li:nth-child(even){ 
    background: transparent;
  }
