@@ -23,7 +23,16 @@ class App extends Component {
       todoList: [],
       completed: false
     }
+    let user = getCurrentUser()
+    if (user) {
+      TodoModel.getByUser(user, (todos) => {
+        let stateCopy = JSON.parse(JSON.stringify(this.state))
+        stateCopy.todoList = todos
+        this.setState(stateCopy)
+      })
+    }
   }
+
   render() {
     let list = null;
 
