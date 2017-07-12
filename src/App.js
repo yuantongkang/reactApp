@@ -176,11 +176,14 @@ class App extends Component {
   }
   componentDidUpdate() { }
   toggle(e, todo) {
-    todo.status = todo.status === 'completed'
-      ? ''
-      : 'completed'
-    this.setState(this.state)
-    //localStore.save('todoList', this.state.todoList)
+    let oldStatus = todo.status
+      todo.status = todo.status === 'completed' ? '' : 'completed'
+     TodoModel.update(todo, () => {
+       this.setState(this.state)
+     }, (error) => {
+       todo.status = oldStatus
+       this.setState(this.state)
+     })
   }
   changeTitle(event) {
     this.setState({ newTodo: event.target.value, todoList: this.state.todoList })
