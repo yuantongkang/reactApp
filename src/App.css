@@ -32,3 +32,4 @@ body{
   }
        .ant-radio-button-wrapper{position: static  !important}
   label{position:static  !important }     
+  div.ant-radio-group.todostate{text-align: center;}
