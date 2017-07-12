@@ -6,59 +6,79 @@ AV.init({
   appKey: APP_KEY
 });
 export default AV
+export const TodoModel = {
+  create({ status, title, deleted }, successFn, errorFn) {
+    let Todo = AV.Object.extend('Todo') // 记得把多余的分号删掉，我讨厌分号
+    let todo = new Todo()
+    todo.set('title', title)
+    todo.set('status', status)
+    todo.set('deleted', deleted)
+    todo.save().then(function (response) {
+      successFn.call(null, response.id)
+    }, function (error) {
+      errorFn && errorFn.call(null, error)
+    });
 
-export function signUp(email,username, password, successFn, errorFn){
-    // 新建 AVUser 对象实例
-   var user = new AV.User()
-   // 设置用户名
-   user.setUsername(username)
-   // 设置密码
-   user.setPassword(password)
-   // 设置邮箱
-   user.signUp().then(function (loginedUser) {
-     let user = getUserFromAVUser(loginedUser)
-     successFn.call(null, user)
-   }, function (error) {
-     errorFn.call(null, error)
-   })
-    user.setEmail(email)
-   return undefined
- 
- }
- export function sendPasswordResetEmail(email, successFn, errorFn){
-   AV.User.requestPasswordReset(email).then(function (success) {
-     successFn.call() 
-   }, function (error) {
-     errorFn.call(null, error)
-   })
- }
- 
- 
- function getUserFromAVUser(AVUser){
-   console.log(...AVUser.attributes)
-   return {
-     id: AVUser.id,
-     ...AVUser.attributes
-   }
- }
-export function signOut(){
-   AV.User.logOut()
-   return undefined
- }
- export function getCurrentUser(){
-   let user = AV.User.current()
-   if(user){
-     return getUserFromAVUser(user)
-   }else{
-     return null
-   }
- }
- 
- export function signIn(username, password, successFn, errorFn){
-   AV.User.logIn(username, password).then(function (loginedUser) {
-     let user = getUserFromAVUser(loginedUser)
-     successFn.call(null, user)
-   }, function (error) {
-     errorFn.call(null, error)
-   })
- }
+  },
+  update() {
+
+  },
+  destroy() {
+
+  }
+}
+export function signUp(email, username, password, successFn, errorFn) {
+  // 新建 AVUser 对象实例
+  var user = new AV.User()
+  // 设置用户名
+  user.setUsername(username)
+  // 设置密码
+  user.setPassword(password)
+  // 设置邮箱
+  user.signUp().then(function (loginedUser) {
+    let user = getUserFromAVUser(loginedUser)
+    successFn.call(null, user)
+  }, function (error) {
+    errorFn.call(null, error)
+  })
+  user.setEmail(email)
+  return undefined
+
+}
+export function sendPasswordResetEmail(email, successFn, errorFn) {
+  AV.User.requestPasswordReset(email).then(function (success) {
+    successFn.call()
+  }, function (error) {
+    errorFn.call(null, error)
+  })
+}
+
+
+function getUserFromAVUser(AVUser) {
+  console.log(...AVUser.attributes)
+  return {
+    id: AVUser.id,
+    ...AVUser.attributes
+  }
+}
+export function signOut() {
+  AV.User.logOut()
+  return undefined
+}
+export function getCurrentUser() {
+  let user = AV.User.current()
+  if (user) {
+    return getUserFromAVUser(user)
+  } else {
+    return null
+  }
+}
+
+export function signIn(username, password, successFn, errorFn) {
+  AV.User.logIn(username, password).then(function (loginedUser) {
+    let user = getUserFromAVUser(loginedUser)
+    successFn.call(null, user)
+  }, function (error) {
+    errorFn.call(null, error)
+  })
+}

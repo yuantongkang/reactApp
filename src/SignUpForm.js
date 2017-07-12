@@ -4,9 +4,19 @@ import { Icon, Button, Input } from 'antd';
 function switchDialogState(props, e) {
   props.onSwitch(e)
   console.log(arguments)
-
 }
-
+function checkFormData(email, username, password) {
+  let regUsername = new RegExp("\\w{3,10}")
+  let regPassword = new RegExp("\\w{6,20}")
+  if (!regUsername.test(username)) {
+    alert('用户名长度为3-10个字符')
+    return false
+  } else if (!regPassword.test(password)) {
+    alert('密码长度为6-20个字符')
+    return false
+  }
+  return true
+}
 
 
 
@@ -35,6 +45,7 @@ export default function SignUpForm(props) {
       <Input
         className='row'
         placeholder="输入邮箱"
+        type="email"
         prefix={<Icon type="mail" />}
         onChange={props.onChange.bind(null, 'email')}
 

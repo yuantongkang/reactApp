@@ -1,5 +1,16 @@
 @import '~antd/dist/antd.css';
+body{
+  /* position: relative;
+  z-index: 1; */
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
 .App {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
   color: #333;
   border: 1px solid #aaa;
   border-radius: 4px;
@@ -7,7 +18,7 @@
   margin: 2em;
   padding: 0 1em;
   min-height: 20em;
-  min-width: 32em;
+   max-width: 35em; 
   box-shadow: 0 0 1em hsla(0,0%,0%,0.15);
 }
 .App > .todoList> li:nth-child(odd){
@@ -16,3 +27,8 @@
  .App > .todoList> li:nth-child(even){ 
    background: transparent;
  }
+  .todostate{
+    margin : 3em 3em;
+  }
+       .ant-radio-button-wrapper{position: static  !important}
+  label{position:static  !important }     

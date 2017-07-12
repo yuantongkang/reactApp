@@ -20,6 +20,10 @@ export default class UserDialog extends Component {
     e.preventDefault()
     let { email, username, password } = this.state.formData
     let success = (user) => {
+      let isLeagal = this.checkFormData.call(this, email, username, password) 
+      if (isLeagal === false) {
+        return
+      }
       this.props.onSignUp.call(null, user)
     }
     let error = (error) => {
@@ -58,7 +62,19 @@ export default class UserDialog extends Component {
     stateCopy.formData[key] = e.target.value
     this.setState(stateCopy)
   }
+  checkFormData(email, username, password) {
+    let regUsername = new RegExp("\\w{3,10}")
+    let regPassword = new RegExp("\\w{6,20}")
 
+    if (!regUsername.test(username)) {
+      alert('用户名长度为3-10个字符')
+      return false
+    } else if (!regPassword.test(password)) {
+      alert('密码长度为6-20个字符')
+      return false
+    }
+    return true
+  }
   render() {
 
     return (
