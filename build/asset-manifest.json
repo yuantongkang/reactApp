@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "main.css": "static/css/main.74d08509.css",
   "main.css.map": "static/css/main.74d08509.css.map",
 <<<<<<< HEAD
@@ -20,6 +21,12 @@
   "main.js": "static/js/main.f81d7e07.js",
   "main.js.map": "static/js/main.f81d7e07.js.map",
 >>>>>>> a70dd4b... build *4
+=======
+  "main.css": "static/css/main.ed435c0c.css",
+  "main.css.map": "static/css/main.ed435c0c.css.map",
+  "main.js": "static/js/main.24f2e09e.js",
+  "main.js.map": "static/js/main.24f2e09e.js.map",
+>>>>>>> 86c5f01... modify stylesheet
   "static\\media\\background.png": "static/media/background.6efed833.png",
   "static\\media\\logo.svg": "static/media/logo.ee7cd8ed.svg"
 }

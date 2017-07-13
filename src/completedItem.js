@@ -6,8 +6,8 @@ export default class CompletedItem extends Component {
   render() {
     return (
       <div className="TodoItem">
-        <input type="checkbox" checked={this.props.todo.status === 'completed'}
-          onChange={this.toggle.bind(this)} />
+        {/* <input type="checkbox" checked={this.props.todo.status === 'completed'}
+          onChange={this.toggle.bind(this)} /> */}
         <span className="title">{this.props.todo.title}</span>
         <Button onClick={this.resume.bind(this)}>复原</Button>
        
