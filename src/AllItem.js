@@ -5,7 +5,7 @@ import { Button } from 'antd';
 export default class AllItem extends Component {
   render() {
     return (
-      <div className="TodoItem">
+      <div className="TodoItem All">
         <input type="checkbox" checked={this.props.todo.status === 'completed'}
           onChange={this.toggle.bind(this)} />
         <span className="title">{this.props.todo.title}</span>
