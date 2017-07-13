@@ -80,13 +80,13 @@ export function signUp(email, username, password, successFn, errorFn) {
   // 设置密码
   user.setPassword(password)
   // 设置邮箱
+  user.setEmail(email)
   user.signUp().then(function (loginedUser) {
     let user = getUserFromAVUser(loginedUser)
     successFn.call(null, user)
   }, function (error) {
     errorFn.call(null, error)
   })
-  user.setEmail(email)
   return undefined
 
 }

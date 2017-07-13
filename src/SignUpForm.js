@@ -27,6 +27,15 @@ export default function SignUpForm(props) {
       <h1>注册</h1>
       <Input
         className='row'
+        placeholder="输入邮箱"
+
+        prefix={<Icon type="mail" />}
+        onChange={props.onChange.bind(null, 'email')}
+
+        value={props.formData.email}
+      />
+      <Input
+        className='row'
         placeholder="输入用户名"
         prefix={<Icon type="user" />}
         onChange={props.onChange.bind(null, 'username')}
@@ -42,17 +51,8 @@ export default function SignUpForm(props) {
         type='password'
         value={props.formData.password}
       />
-      <Input
-        className='row'
-        placeholder="输入邮箱"
-        type="email"
-        prefix={<Icon type="mail" />}
-        onChange={props.onChange.bind(null, 'email')}
-
-        value={props.formData.email}
-      />
       <div className="row actions">
-        <Button type="primary " size="large" htmlType="submit">注册{console.log(props.onChange)}</Button>
+        <Button type="primary " size="large" htmlType="submit">注册{console.log(props.formData)}</Button>
 
       </div>
       <div className='SignIn'> <span>已经注册？<a onClick={switchDialogState.bind(null, props)}><span>请登录</span></a></span></div>

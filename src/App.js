@@ -205,7 +205,8 @@ class App extends Component {
         newTodo: '',
         todoList: this.state.todoList
       })
-    }, (error) => {
+    }, (error) => {   
+      
       console.log(error)
     })
 
