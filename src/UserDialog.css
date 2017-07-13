@@ -2,7 +2,7 @@
                 
   /*全屏*/      position: fixed; top: 0; left: 0; bottom: 0; right: 0; 
    /*内容居中*/  display: flex; justify-content: center; align-items: center;
-   background: url( ./picture/background.png) no-repeat;
+   background: url( http://onb5ufwvw.bkt.clouddn.com/background1.png) no-repeat;
    background-size: cover;
   
  }
@@ -19,7 +19,6 @@
 
  .UserDialog form>.row.actions{ padding-left: 4em; display: flex; align-items: center;}
  .UserDialog form>.row.actions button{ margin-right: .5em; }
- 
  .UserDialog button{font: inherit; padding: .2em;}
  .UserDialog > nav:first-child{ padding: 1em; margin-left:-2em;}
  .UserDialog > nav:first-child label{ margin-left: 2em;cursor:pointer; }
@@ -29,10 +28,11 @@
  .UserDialog form>.row>label:first-child{ width: 4em; }
  .UserDialog form>.row.actions{ padding-left: 4em; }
  .anticon{ display:flex;line-height: none;text-align:center;}
- .signUp  {display: flex;align-content: space-around;flex-direction: column;justify-content:center}
+ .signUp  {display: flex;align-content: space-around;flex-direction: column;justify-content:center; align-items: center;}
  .signUp > *{margin:10px 0;}
   div.UserDialog-Wrapper > div > div > div > form > div{text-align: center;margin: 5px -13px;}
   .signIn >  *{ margin:10px 0; max-width: 200px;display:flex;align-content: space-around ;justify-content:center; align-items: center;}
   .UserDialog{min-height:30em;min-width: 23em; display: flex; align-items: center;justify-content: center}
   .ant-btn {    width: 6em}
    form > div.row.actions{    margin: 0 40px 0 -10px}
+   .signIn{display: flex;align-items: center;flex-direction: column;justify-content: center}

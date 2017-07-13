@@ -34,3 +34,5 @@ body{
   label{position:static  !important }     
   div.ant-radio-group.todostate{text-align: center;}
   #root > div > h1 > .ant-btn-danger{vertical-align: text-bottom;}
+  #root > div > div.UserDialog-Wrapper > div > div > div > form > div.row.actions{margin:1.3em 0;padding: 0;}
+  

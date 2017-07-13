@@ -28,7 +28,7 @@ export default function SignUpForm(props) {
       <Input
         className='row'
         placeholder="输入邮箱"
-
+        type="email"
         prefix={<Icon type="mail" />}
         onChange={props.onChange.bind(null, 'email')}
 
