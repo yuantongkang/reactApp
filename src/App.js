@@ -17,7 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: getCurrentUser || {},
+      user: getCurrentUser() || {},
       newTodo: '',
       // todoList: []
       todoList: [],
@@ -35,7 +35,6 @@ class App extends Component {
   }
 
   render() {
-    let list = null;
 
     let all = this
       .state
@@ -93,6 +92,7 @@ class App extends Component {
           </li>
         )
       })
+    let list = null;
     if (this.state.completed == true) {
       console.log(arguments)
       list = completedTodos
@@ -139,9 +139,9 @@ class App extends Component {
           onChange={this.changeTodoState.bind(this)}
           className="todostate"
         >
-          <RadioButton value="active">ACTIVE</RadioButton>
-          <RadioButton value="completed">COMPLETED</RadioButton>
-          <RadioButton value="all">ALL</RadioButton>
+          <RadioButton value="active">待做</RadioButton>
+          <RadioButton value="completed">已完成</RadioButton>
+          <RadioButton value="all">全部</RadioButton>
         </RadioGroup>
       </div>
     )
@@ -226,7 +226,7 @@ class App extends Component {
     })
   }
   resume(event, todo) {
-    TodoModel.destroy(todo.id, () => {
+    TodoModel.resume(todo.id, () => {
       todo.deleted = false
       this.setState(this.state)
     })

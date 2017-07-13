@@ -1,8 +1,13 @@
 {
-  "main.css": "static/css/main.1a17b593.css",
-  "main.css.map": "static/css/main.1a17b593.css.map",
-  "main.js": "static/js/main.340c3a6d.js",
-  "main.js.map": "static/js/main.340c3a6d.js.map",
+  "main.css": "static/css/main.74d08509.css",
+  "main.css.map": "static/css/main.74d08509.css.map",
+<<<<<<< HEAD
+  "main.js": "static/js/main.c5af8bc9.js",
+  "main.js.map": "static/js/main.c5af8bc9.js.map",
+=======
+  "main.js": "static/js/main.83a39227.js",
+  "main.js.map": "static/js/main.83a39227.js.map",
+>>>>>>> 702d6c2... fix 刷新之后又要重新登录 bug 给忘记密码功能增加样式
   "static\\media\\background.png": "static/media/background.6efed833.png",
   "static\\media\\logo.svg": "static/media/logo.ee7cd8ed.svg"
 }

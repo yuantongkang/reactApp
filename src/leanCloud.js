@@ -64,9 +64,14 @@ export const TodoModel = {
     }, (error) => errorFn && errorFn.call(null, error))
   },
   destroy(todoId, successFn, errorFn) {
-    TodoModel.update({id: todoId, deleted: true}, successFn, errorFn)
+    TodoModel.update({ id: todoId, deleted: true }, successFn, errorFn)
+  },
+  resume(todoId, successFn, errorFn) {
+    TodoModel.update({ id: todoId, deleted: false }, successFn, errorFn)
   }
 }
+
+
 export function signUp(email, username, password, successFn, errorFn) {
   // 新建 AVUser 对象实例
   var user = new AV.User()
