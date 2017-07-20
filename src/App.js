@@ -16,13 +16,6 @@ const RadioGroup = Radio.Group;
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      user: getCurrentUser() || {},
-      newTodo: '',
-      // todoList: []
-      todoList: [],
-      completed: false
-    }
     let user = getCurrentUser()
     if (user) {
       TodoModel.getByUser(user, (todos) => {
@@ -32,6 +25,14 @@ class App extends Component {
         this.setState(stateCopy)
       })
     }
+    this.state = {
+      user: getCurrentUser() || {},
+      newTodo: '',
+      // todoList: []
+      todoList: [],
+      completed: false
+    }
+
   }
 
   render() {
@@ -148,9 +149,14 @@ class App extends Component {
   }
 
   onSignUp(user) {
-    let stateCopy = JSON.parse(JSON.stringify(this.state))
-    stateCopy.user = user
-    this.setState(stateCopy)
+    if (user) {
+      TodoModel.getByUser(user, (todos) => {
+        let stateCopy = JSON.parse(JSON.stringify(this.state))
+        stateCopy.todoList = todos
+        console.log(todos)
+        this.setState(stateCopy)
+      })
+    }
   }
   signOut() {
     signOut()
@@ -159,8 +165,14 @@ class App extends Component {
     this.setState(stateCopy)
   }
   onSignIn(user) {
+    TodoModel.getByUser(user, (todos) => {
+        let stateCopy = JSON.parse(JSON.stringify(this.state))
+        stateCopy.todoList = todos
+        console.log(todos)
+        this.setState(stateCopy)
+      })  
     let stateCopy = JSON.parse(JSON.stringify(this.state))
-    stateCopy.user = user
+    stateCopy.user = getCurrentUser()
     this.setState(stateCopy)
   }
   changeTodoState(event, todo) {
@@ -205,8 +217,8 @@ class App extends Component {
         newTodo: '',
         todoList: this.state.todoList
       })
-    }, (error) => {   
-      
+    }, (error) => {
+
       console.log(error)
     })
 
@@ -231,9 +243,8 @@ class App extends Component {
       todo.deleted = false
       this.setState(this.state)
     })
-
-
   }
+
 }
 
 
